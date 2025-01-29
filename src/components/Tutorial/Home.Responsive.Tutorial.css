@@ -1,0 +1,106 @@
+@media (width <=810px) {
+	.homeTutorialWrapper {
+		flex-direction: column;
+		width: 500px;
+	}
+
+	.homeTutorialFace {
+		border: 0;
+		width: 100%;
+		justify-content: center;
+		height: 200px;
+		transform: translateX(-10px);
+		scale: 0.7;
+	}
+
+	.textCarousel {
+		padding: 20px 0;
+		border: none;
+		border-top: 1px solid var(--tutorial-border-color);
+	}
+
+	.carouselContent {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	.homeTutorialContent {
+		width: 90%;
+		padding: 0;
+	}
+}
+
+@media (width <=575px) {
+	.homeTutorialWrapper {
+		width: 80%;
+	}
+}
+
+@media (width <=480px) {
+	.homeTutorialWrapper {
+		width: 90%;
+	}
+
+	.carouselControl {
+		scale: 1.2;
+	}
+
+	.disabled {
+		scale: 1;
+	}
+}
+
+@media (width <=350px) {
+	.homeTutorialTitle {
+		> h2 {
+			margin-bottom: 10px;
+		}
+	}
+
+	.homeTutorialFace {
+		scale: 0.65;
+	}
+}
+
+/* Começo dos breakpoint duplos (width & height) */
+
+@media (width <=480px) and (height <=760px) {
+	.homeTutorialContent {
+		transform: scale(0.9);
+	}
+}
+
+@media (width <=480px) and (height <=715px) {
+	.homeTutorialFace {
+		transform: scale(0.8);
+		min-height: 150px;
+	}
+
+	.carouselProps {
+		padding-bottom: 20px;
+	}
+}
+
+@media (width <=480px) and (height <=630px) {
+
+	.homeTutorialContent {
+		padding-top: 15px;
+		transform: scale(1);
+	}
+
+	.carouselProps {
+		padding-bottom: 20px;
+	}
+}
+
+@media (width <=480px) and (height <=650px) {
+	.homeTutorial {
+		align-items: flex-start;
+	}
+}
+@media (max-height: 550px) and (max-width: 810px) and (orientation: landscape) {
+	.homeTutorial {
+		align-items: flex-start;
+	}
+}

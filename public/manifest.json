@@ -1,0 +1,20 @@
+{
+  "short_name": "Biometria facial",
+  "name": "Captura de biometria facial",
+  "icons": [
+    {
+      "src": "App_Themes/Default/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "App_Themes/Default/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#262626",
+  "background_color": "#EFEFEF"
+}

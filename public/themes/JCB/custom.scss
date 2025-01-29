@@ -1,0 +1,19 @@
+body {
+	background-color: var(--body-primary-background-color);
+	background-image: url("./background.gif");
+	background-attachment: fixed;
+	background-repeat: repeat;
+	background-size: auto !important;
+}
+
+.logoImage {
+	max-width: 210px;
+
+	@media (width <=430px) {
+		width: calc(100% - 10px);
+	}
+}
+
+.homeBody {
+	background-color: transparent;
+}

@@ -1,0 +1,21 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Executar",
+			"preLaunchTask": "npm: dev --no-install",
+			"serverReadyAction": {
+				"pattern": "Compiled...",
+				"action": "openExternally"
+			}
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Instalar",
+			"preLaunchTask": "npm: install-and-run",			
+		}
+	]
+}

@@ -1,0 +1,73 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		// concorrencia
+		{
+			"label": "npm: install",
+			"type": "shell",
+			"command": "npm",
+			"args": ["install", "--force"],
+			"detail": "Install npm dependencies",
+			"problemMatcher": []
+		},
+		{
+			"label": "npm: dev",
+			"type": "shell",
+			"command": "npm",
+			"dependsOn": ["npm: install"],
+			"args": ["run", "start"],
+			"isBackground": true,
+			"detail": "Run the development server",
+			"problemMatcher": {
+				"owner": "custom",
+				"pattern": [
+					{
+						"regexp": ".*",
+						"file": 1,
+						"location": 2,
+						"message": 3
+					}
+				],
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": ".*Starting.*",
+					"endsPattern": ".*Compiled.*"
+				}
+			}
+		},
+
+		// concorrencia
+		{
+			"label": "npm: dev --no-install",
+			"type": "shell",
+			"command": "npm",
+			"args": ["run", "start-dev"],
+			"detail": "Run the development server",
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "custom",
+				"pattern": [
+					{
+						"regexp": ".*",
+						"file": 1,
+						"location": 2,
+						"message": 3
+					}
+				],
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": ".*Starting.*",
+					"endsPattern": ".*Compiled.*"
+				}
+			}
+		},
+
+		// concorrencia
+		{
+			"label": "npm: install-and-run",
+			"dependsOn": ["npm: install", "npm: dev"],
+			"detail": "Run npm install and then start the development server",
+			"problemMatcher": []
+		}
+	]
+}

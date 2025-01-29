@@ -1,0 +1,304 @@
+body:has(.wrapperContainerSignIn) {
+	@media (max-width: 576px) {
+		background: var(--body-secondary-background-color) !important;
+	}
+}
+
+.wrapperContainerSignIn {
+	display: flex;
+	align-items: center;
+	margin-top: 8dvh;
+	margin-bottom: 8dvh;
+}
+
+.cameraIconSignIn {
+	width: 3rem;
+	height: 3rem;
+	margin-bottom: 0;
+	color: var(--form-icon-color);
+}
+
+.wrapperSignIn {
+	background-color: var(--form-background-color);
+	border: 1px solid var(--form-border-color);
+	border-radius: var(--form-border-radius);
+
+	padding: 50px 20px;
+	margin: 0 auto;
+	max-width: 500px;
+	width: 90%;
+
+	@media (max-width: 580px) {
+		padding-top: 0px;
+		border-radius: 0;
+		background-color: transparent;
+		border: none;
+	}
+}
+
+@media (max-width: 750px) {
+	.wrapper {
+		width: 80vw;
+		padding: 50px 40px;
+	}
+
+	.wrapperContainer {
+		margin-top: 5dvh;
+	}
+}
+
+@media (max-height: 750px) {
+	.wrapperContainer {
+		margin-top: 5dvh;
+	}
+}
+
+@media (max-width: 576px) and (max-height: 690px) {
+	.wrapperContainer {
+		margin-top: 0;
+	}
+}
+.centeredContent {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.title {
+	font-size: 1.75rem;
+	margin-bottom: 1rem;
+	margin-top: 0;
+	font-weight: 500;
+}
+
+.description {
+	color: var(--form-secondary-text-color);
+	margin-bottom: 2rem;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.formGroup {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	width: 70%;
+
+	@media (max-width: 500px) {
+		width: 100%;
+	}
+}
+
+.formLabel {
+	display: block;
+	color: var(--form-label-text-color);
+	margin-bottom: 0.5rem;
+}
+
+.inputCustom {
+	padding: 0.5rem;
+	background-color: var(--form-input-background-color);
+	border: 1px solid var(--form-input-border-color);
+	border-radius: var(--form-input-border-radius);
+
+	min-width: 100%;
+	font-family: inherit;
+	box-sizing: border-box;
+
+	&:focus {
+		outline: 0;
+		box-shadow: var(--form-input-box-shadow-width)
+			var(--form-input-box-shadow-color);
+		border: 1px solid var(--form-input-highlight-border-color);
+	}
+}
+
+.formLabel,
+.inputCustom {
+	font-size: 16px;
+}
+
+.inputCustom::placeholder,
+.inputCustom::-webkit-input-placeholder,
+.inputCustom::-moz-placeholder,
+.inputCustom:-ms-input-placeholder,
+.inputCustom::-ms-input-placeholder,
+.inputCustom::-webkit-datetime-edit-text,
+.inputCustom::-webkit-datetime-edit {
+	color: var(--form-placeholder-text-color);
+	opacity: 1;
+	font-family: inherit !important;
+}
+
+.isInvalid {
+	border: 1px solid var(--form-input-highlight-error-color);
+}
+
+.invalidFeedback {
+	color: var(--form-input-highlight-error-color);
+	font-size: 0.875rem;
+	margin-top: 0.25rem;
+}
+
+.submitButton {
+	width: 70%;
+	height: 38px;
+	padding: 0.5rem;
+	background-color: var(--form-button-background-color);
+	color: var(--form-button-text-color);
+	border: none;
+	border-radius: var(--form-button-border-radius);
+	font-size: 1rem;
+	cursor: pointer;
+	margin: 0;
+	margin-top: 1rem;
+	font-family: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	transition: background-color 0.3s ease, padding-right 0.3s ease;
+
+	.submitArrow {
+		position: absolute;
+		width: 20px;
+		aspect-ratio: 1/1;
+		left: 50%;
+		opacity: 0;
+		transition: opacity 0.2s ease, left 0.3s ease;
+	}
+
+	&:hover:enabled {
+		padding-right: 30px;
+
+		.submitArrow {
+			opacity: 1;
+			left: calc(50% + 20px);
+			transition: opacity 0.3s ease, left 0.3s ease;
+		}
+	}
+
+	&:disabled {
+		background-color: var(--form-button-disabled-background-color);
+		cursor: not-allowed;
+	}
+
+	@media (max-width: 500px) {
+		width: 100%;
+	}
+}
+
+.loader {
+	width: 16px;
+	position: absolute;
+	left: 48%;
+	aspect-ratio: 1/1;
+	border: 2px solid var(--loader-primary-color);
+	border-top: 2px solid var(--loader-secondary-color);
+	border-radius: var(--loader-border-radius);
+
+	animation: spin 1s ease-in-out infinite;
+	opacity: 0.8;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+	display: none;
+	visibility: hidden;
+}
+
+.checkbox-wrapper .checkbox {
+	margin: auto;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	display: flex;
+}
+.checkbox-wrapper .checkbox span {
+	display: inline-block;
+	vertical-align: middle;
+	transform: translate3d(0, 0, 0);
+	display: flex;
+	color: var(--form-secondary-text-color);
+	font-size: 14px;
+	align-items: center;
+
+	a {
+		text-decoration: underline;
+		color: var(--form-label-text-color);
+	}
+}
+
+.checkbox-wrapper .checkbox span:first-child {
+	position: relative;
+	width: 18px;
+	height: 18px;
+	border-radius: 3px;
+	transform: scale(1);
+	vertical-align: middle;
+	border: 1px solid var(--form-border-color);
+	transition: all 0.2s ease;
+}
+.checkbox-wrapper .checkbox span:first-child svg {
+	position: absolute;
+	top: 4px;
+	left: 3px;
+	fill: none;
+	stroke: var(--form-background-color);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-dasharray: 16px;
+	stroke-dashoffset: 16px;
+	transition: all 0.3s ease;
+	transition-delay: 0.1s;
+	transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper .checkbox span:first-child:before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: var(--form-background-button-color);
+	display: block;
+	transform: scale(0);
+	opacity: 1;
+	border-radius: 50%;
+}
+.checkbox-wrapper .checkbox span:last-child {
+	padding-left: 8px;
+}
+.checkbox-wrapper .checkbox:hover span:first-child {
+	border-color: var(--form-border-color);
+}
+
+.checkbox-wrapper .inputCheckbox:checked + .checkbox span:first-child {
+	background: var(--form-label-text-color);
+	border-color: var(--form-label-text-color);
+	animation: wave 0.4s ease;
+}
+.checkbox-wrapper .inputCheckbox:checked + .checkbox span:first-child svg {
+	stroke-dashoffset: 0;
+}
+.checkbox-wrapper .inputCheckbox:checked + .checkbox span:first-child:before {
+	transform: scale(3.5);
+	opacity: 0;
+	transition: all 0.6s ease;
+}
+
+@keyframes wave {
+	50% {
+		transform: scale(0.9);
+	}
+}

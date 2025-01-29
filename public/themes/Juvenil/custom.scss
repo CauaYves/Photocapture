@@ -1,0 +1,31 @@
+.logoImage 
+{
+    max-width: 60px;
+
+    @media (width <=430px){
+        width: calc(100% - 10px);
+    }
+}
+
+body
+{
+    background-color: #f6f6f6;
+}
+
+.btn
+{
+    font-family: var(--body-font-family);
+}
+
+.homeBody
+{
+    background-color: transparent;
+}
+
+@media (width <= 580px) {
+
+    .homeBody:not(:has(.captureBody))
+    {
+        background-color: #FFFFFF;
+    }
+}

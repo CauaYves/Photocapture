@@ -1,0 +1,226 @@
+@media (width <1070px) {
+	.homeWrapper {
+		width: 95%;
+	}
+
+	.wrapperCard {
+		width: 420px;
+	}
+
+	.homeCardMemberInfo {
+		gap: 10px;
+	}
+
+	.cardContainer {
+		display: flex;
+	}
+}
+
+@media (width <=1000px) {
+	.homeWrapperCards {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.wrapperCard {
+		width: 460px;
+	}
+
+	.homeCardMemberInfo {
+		gap: 40px;
+	}
+}
+
+@media (max-width: 580px) {
+	.homeBody {
+		background-color: var(--body-secondary-background-color);
+	}
+
+	.homeWrapper {
+		padding-top: 10px;
+		margin: 0;
+		outline: none;
+		width: 100%;
+		border-radius: 0;
+	}
+}
+
+@media (width <=520px) {
+	.wrapperCard {
+		width: 440px;
+		height: 200px;
+	}
+
+	.homeCardMemberInfo {
+		gap: 24px;
+	}
+
+	.homeCardButton button {
+		padding: 3px 8px;
+	}
+}
+
+@media (width <=480px) {
+	.homeWrapperCards {
+		width: 90%;
+	}
+
+	.homeCardContent {
+		box-sizing: border-box;
+	}
+
+	.homeWrapper {
+		width: 100%;
+		justify-content: flex-start;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.wrapperCard {
+		width: 100%;
+	}
+
+	.homeCardMemberInfo {
+		gap: 8px;
+	}
+
+	.homeCardMember b {
+		max-width: 100%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.homeMemberDoc p,
+	.homeMemberBirth p {
+		font-size: 0.75rem;
+	}
+
+	.homeCardButton {
+		padding-right: 0;
+	}
+
+	.cardContainer {
+		width: 100%;
+	}
+
+	.homeCardButton {
+		padding-right: 0;
+	}
+}
+
+@media (width <=430px) {
+	.homeWrapperHeader {
+		margin-top: 10px;
+	}
+
+	.homeHeaderTitle {
+		font-size: 1.7rem;
+		margin-left: 5px;
+	}
+
+	.homeHeaderIcon {
+		transform: scale(0.8);
+	}
+
+	.homeWrapper {
+		padding: 5px;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: 80px;
+	}
+
+	.wrapperCard {
+		width: 100%;
+	}
+
+	.homeMemberBirth b,
+	.homeMemberDoc b {
+		font-size: 0.7rem;
+	}
+
+	.cardMember {
+		width: 100%;
+	}
+
+	.homeCardButton button {
+		padding: 3px 7px;
+	}
+
+	.homeCardHasPhoto,
+	.homeCardButton {
+		padding-right: 0;
+		gap: 6px;
+	}
+}
+@media (width <=415px) {
+	.homeCardHasPhoto {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+	}
+
+	.wrapperCard {
+		flex-direction: column;
+		height: fit-content;
+		flex-wrap: nowrap;
+		box-sizing: border-box;
+	}
+
+	.homeCardContent {
+		flex-direction: column;
+		margin: 0;
+		padding: 15px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.homeCardMemberInfo {
+		justify-content: space-between;
+		flex-direction: row;
+	}
+
+	.homeCardButton {
+		flex-direction: row;
+		align-self: center;
+		justify-content: center;
+		padding-bottom: 3px;
+		margin-top: 10px;
+
+		p {
+			font-size: 0.85rem;
+		}
+	}
+
+	.homeCardHasPhoto .hasPhoto {
+		font-size: 0.85rem;
+	}
+
+	.homeCardImage {
+		width: 100%;
+		height: 400px;
+		border-top-left-radius: var(--card-border-radius);
+		border-top-right-radius: var(--card-border-radius);
+		border-bottom-left-radius: 0;
+	}
+
+	.homeMemberDoc p,
+	.homeMemberBirth p {
+		font-size: 0.88rem;
+	}
+
+	.homeMemberBirth b,
+	.homeMemberDoc b {
+		font-size: 0.85rem;
+	}
+
+	.homeCardButton button {
+		padding: 3px 10px;
+	}
+}
+
+@media (width <=320px) {
+	.homeCardMemberInfo {
+		gap: 15px;
+	}
+}

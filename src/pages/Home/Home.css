@@ -1,0 +1,565 @@
+.homeBody:not(:has(.captureBody)) {
+	text-align: start;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+.cameraIcon {
+	width: 50px;
+}
+
+.homeWrapper {
+	width: 1000px;
+	display: flex;
+	margin-top: 6dvh;
+	background-color: var(--wrapper-background-color);
+	outline: 1px solid var(--wrapper-border-color);
+	border-radius: var(--wrapper-border-radius);
+
+	padding-bottom: 70px;
+	margin-bottom: 70px;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	position: relative;
+}
+
+.homeWrapperHeader {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	z-index: 1;
+	margin-top: 30px;
+	backdrop-filter: blur(8px);
+	border-radius: var(--wraper-border-radius);
+}
+
+.homeWrapperHeaderContent {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 90%;
+	padding: 8px;
+}
+
+.homeHeaderTitle {
+	margin: 0;
+	color: var(--wrapper-primary-text-color);
+	font-family: var(--wrapper-primary-font);
+	margin-left: 18px;
+	font-weight: 500;
+	font-size: 2.4rem;
+}
+
+.homeHeaderLine {
+	width: 100%;
+	border-top: 1px solid var(--wrapper-border-color);
+	margin-bottom: 8px;
+	margin-top: 5px;
+}
+
+.homeMemberTitleInfo {
+	width: 90%;
+	height: fit-content;
+	font-weight: 500;
+}
+
+.homeMemberTitleInfo h2 {
+	outline: 1px solid var(--wrapper-member-title-border-color);
+	font-weight: 500;
+	width: fit-content;
+	padding: 10px 15px;
+	font-size: 1.1rem;
+	font-family: var(--wrapper-member-title-primary-font);
+	color: var(--wrapper-member-title-text-color);
+	border-radius: var(--wrapper-member-title-border-radius);
+	background: var(--wrapper-member-title-background-color);
+}
+
+.homeWrapperSection {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.homeWrapperCards {
+	margin-top: 20px;
+	width: 90%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	row-gap: 30px;
+}
+
+.wrapperCard {
+	display: flex;
+	align-items: center;
+	position: relative;
+	outline: 1px solid var(--card-border-color);
+	border-radius: var(--card-border-radius);
+	width: 440px;
+	height: 200px;
+	background-color: var(--card-background-color);
+	overflow: hidden;
+}
+
+.cardContainer {
+	display: flex;
+	opacity: 0;
+	transition: all 0.5s;
+	transform: translateY(10px);
+	pointer-events: none;
+}
+
+.fade-in {
+	opacity: 1;
+	pointer-events: all;
+	transform: translateY(0);
+}
+
+.homeCardImage {
+	height: 100%;
+	width: 34%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-top-left-radius: var(--card-border-radius);
+	border-bottom-left-radius: var(--card-border-radius);
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+.homeCardImage img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: bottom;
+	background-color: var(--default-user-background);
+}
+
+.homeCardContent {
+	padding: 10px 10px;
+	align-self: start;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 66%;
+	font-family: var(--card-primary-font);
+	box-sizing: border-box;
+	height: 100%;
+	justify-content: space-between;
+}
+
+.homeCardMember {
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.homeCardMember b {
+	font-weight: 600;
+	font-size: 1.2rem;
+	max-width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	color: var(--card-primary-text-color);
+}
+
+.homeCardMember p {
+	margin: 0;
+	font-size: 0.75rem;
+	color: var(--card-tertiary-text-color);
+	font-weight: 300;
+}
+
+.homeCardMemberInfo {
+	margin-top: 10px;
+	display: flex;
+	gap: 10px;
+	justify-content: space-between;
+}
+
+.homeMemberBirth {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	width: 58%;
+}
+
+.homeMemberBirth p {
+	margin: 0;
+	color: var(--card-secondary-text-color);
+	font-size: 0.75rem;
+}
+
+.homeMemberBirth b {
+	margin: 0;
+	color: var(--card-tertiary-text-color);
+	font-weight: 600;
+	font-size: 0.8rem;
+}
+
+.homeMemberDoc {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	width: 42%;
+}
+
+.homeMemberDoc p {
+	margin: 0;
+	color: var(--card-secondary-text-color);
+	font-size: 0.75rem;
+}
+
+.homeMemberDoc b {
+	margin: 0;
+	color: var(--card-tertiary-text-color);
+	font-weight: 600;
+	font-size: 0.8rem;
+	line-break: anywhere;
+}
+
+.homeCardButton {
+	margin-top: 5px;
+	display: flex;
+	gap: 10px;
+	justify-content: end;
+}
+
+.galleryp {
+	margin-right: 0px;
+}
+
+.homeCardButton button,
+.homeCardButton label {
+	padding: 3px 10px;
+	position: relative;
+	cursor: pointer;
+	background-color: var(--card-button-background-color);
+	border-radius: var(--card-button-border-radius);
+	color: var(--card-button-text-color);
+	font-family: var(--card-button-primary-font);
+	outline: 1px solid var(--card-button-border-color);
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 6px;
+	transition: background-color 0.3s, scale 0.3s,
+		transform 0.3s cubic-bezier(0.5, -1.5, 0.5, 1.5), outline 0.3s 0.2s,
+		opacity 0.5s ease, outline-offset 0.2s linear;
+}
+
+.homeUploadPhotoInput {
+	pointer-events: none;
+	opacity: 0;
+	width: 0;
+	position: absolute;
+}
+
+.homeCardButton .homeTakePhoto .homeTakePhotoNoAi {
+	width: auto;
+}
+
+.capturaIaButtonWrapper {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+}
+
+.homeCardButton label:nth-child(1) {
+	cursor: pointer;
+	width: 100%;
+	aspect-ratio: 1/1;
+}
+
+.homeCardButton p {
+	user-select: none;
+	text-align: center;
+	width: fit-content;
+	white-space: nowrap;
+	pointer-events: all;
+	font-size: 0.7rem;
+	transition: all 0.1s;
+}
+
+.homeCardButton .iconImage {
+	transition: all 0.1s;
+}
+
+.homeCardButton button:focus,
+.homeCardButton label:focus,
+.homeCardButton .homeUploadPhoto:has(input:focus),
+.homeCardButton .homeUploadPhoto:has(input:focus-visible) {
+	background-color: var(--card-button-highlight-background-color);
+	outline: 1px solid var(--card-button-highlight-border-color);
+	color: var(--card-button-highlight-text-color);
+	outline-offset: 2px;
+
+	.iconImage {
+		color: var(--card-button-highlight-icon-color);
+	}
+
+	p {
+		color: var(--card-button-highlight-text-color);
+	}
+}
+
+.homeCardButton button:nth-child(2) label {
+	width: 24px;
+	background-size: contain;
+	background-position: center;
+	aspect-ratio: 1/1;
+}
+
+.homeCardHasPhoto {
+	display: flex;
+	align-self: flex-end;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	margin-top: 5px;
+}
+
+.homeCardHasPhoto .hasPhoto {
+	display: flex;
+	gap: 8px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--card-has-photo-background-color);
+	border-radius: var(--card-button-border-radius);
+	font-family: var(--card-has-photo-font);
+	padding: 3px 10px;
+	outline: 1px solid var(--card-has-photo-border-color);
+	color: var(--card-has-photo-text-color);
+	font-size: 0.7rem;
+}
+
+.homeCardHasPhoto .iconImageHasPhoto {
+	color: var(--card-has-photo-icon-color);
+}
+
+.imageSkeleton {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		45deg,
+		var(--default-shimmer-primary-color),
+		var(--default-shimmer-secondary-color),
+		var(--default-shimmer-primary-color)
+	);
+	background-size: 100% 600%;
+	border-radius: var(--card-border-radius);
+}
+
+.textSkeleton {
+	height: 16px;
+	margin-bottom: 0.3rem;
+	border-radius: var(--card-border-radius);
+
+	background: linear-gradient(
+		45deg,
+		var(--default-shimmer-primary-color),
+		var(--default-shimmer-secondary-color),
+		var(--default-shimmer-primary-color)
+	);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+}
+
+.opacityControl {
+	opacity: 1 !important;
+	pointer-events: all !important;
+	backdrop-filter: blur(5px);
+}
+
+.popupBackgroundBlur {
+	opacity: 0;
+	pointer-events: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	top: 0;
+	backdrop-filter: blur(5px);
+	z-index: 15;
+	transition: opacity 0.3s;
+}
+
+.popupWrapper {
+	background-color: var(--modal-background-color);
+	border: 1px solid var(--modal-border-color);
+	border-radius: var(--modal-border-radius);
+	text-align: center;
+	box-shadow: 0 4px 8px var(--modal-box-shadow-color);
+	margin: 2.5vh;
+	padding: 4vh 3vw;
+	white-space: pre-line;
+	text-wrap: pretty;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@media (min-width: 576px) {
+		width: 70vw;
+		font-size: 0.7rem;
+	}
+
+	@media (min-width: 768px) {
+		width: 40vw;
+	}
+
+	@media (min-width: 992px) {
+		width: 25vw;
+	}
+}
+
+.recoginitionPopup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	padding: 30px 0;
+}
+
+.sendingMessageUpload h5 {
+	font-size: 1.3rem;
+	margin-bottom: 0.5rem;
+	margin: 0;
+	color: var(--modal-title-color-success);
+}
+
+.sendingMessageUpload p {
+	font-size: 1rem;
+	color: var(--modal-text-color);
+	text-align: center;
+	margin: 0;
+	margin-top: 0.5rem;
+	box-sizing: border-box;
+	line-height: 1.4;
+}
+
+.sendingMessageUpload {
+	opacity: 0;
+	transform: translateY(5px);
+	transition: all 0.3s ease-in-out;
+}
+
+.sendingMessageUpload.show {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.loaderIcon {
+	width: 60px;
+	height: 60px;
+	border-radius: var(--loader-border-radius);
+	display: inline-block;
+	border: 3px solid var(--loader-primary-color);
+	border-top: 3px solid var(--loader-secondary-color);
+	box-sizing: border-box;
+	animation: rotation 1.5s linear infinite;
+	margin-bottom: 15px;
+}
+
+.homeCardImage:has(.errorIcon) .errorIcon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.iconImage {
+		width: 55px;
+		height: 55px;
+		color: var(--modal-icon-color-error);
+	}
+
+	p {
+		width: 90%;
+		font-size: 0.8rem;
+		text-align: center;
+		color: var(--modal-icon-color-error);
+	}
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 200% 0;
+	}
+	100% {
+		background-position: -200% 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cardContainer {
+		transition: none;
+		transform: translate(0);
+		pointer-events: all;
+		opacity: 1;
+	}
+
+	.homeCardButton button,
+	.homeCardButton label {
+		transition: none;
+	}
+	.homeCardButton button * {
+		transition: none;
+	}
+
+	.sendingMessage {
+		transform: translateY(0);
+		opacity: 1;
+		transition: none;
+	}
+
+	.loaderIcon {
+		animation: rotation steps(4) infinite 1.5s;
+	}
+}
+/* Debug */
+/* @media (width < 600px) { */
+@media (pointer: fine) {
+	.homeCardButton button:hover,
+	.homeCardButton label:hover,
+	.homeCardButton button:active,
+	.homeCardButton label:active {
+		transform: translateY(-2px);
+		background-color: var(--card-button-highlight-background-color);
+		outline: 1px solid var(--card-button-highlight-border-color);
+		outline-offset: 2px;
+
+		.iconImage {
+			color: var(--card-button-highlight-icon-color);
+		}
+		p {
+			color: var(--card-button-highlight-text-color);
+		}
+	}
+
+	.homeCardButton button:active,
+	.homeCardButton label:active {
+		scale: 0.95;
+		outline-offset: 3px;
+	}
+}

@@ -1,0 +1,48 @@
+body {
+    background-color: #5c7bb4 !important;
+    background-image: url("./background.png"), url("./background.jpg") !important;
+    background-repeat: no-repeat, repeat-x !important;
+    background-attachment: fixed;
+    background-size: auto !important;
+    background-position: 10px 150px, left top !important;
+}
+
+.logoImage 
+{
+    max-width: 60px;
+
+    @media (width <=430px){
+        width: calc(100% - 10px);
+    }
+}
+
+.helpTextContainer
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+}
+
+.faceContainer 
+{
+    @media (max-width: 576px) {
+        background-image: url("./background.jpg") !important;
+        background-position: left !important;
+        background-repeat: repeat-x !important;
+        width: 100vw;
+        height: 100vh;
+        justify-content: inherit;
+    }
+}
+
+.homeBody
+{
+    background-color: transparent;
+}
+
+@media (width <= 580px) {
+
+    .homeBody:not(:has(.captureBody))
+    {
+        background-color: #FFFFFF;
+    }
+}

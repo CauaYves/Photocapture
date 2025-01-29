@@ -1,0 +1,39 @@
+body,
+body:has(.wrapperContainerSignIn) {
+	background-color: #003566;
+	background-image: url("./background.png");
+	background-repeat: repeat;
+	background-size: 5% !important;
+}
+
+.logoImage {
+	max-width: 65px;
+
+	@media (width <=430px) {
+		width: calc(100% - 10px);
+	}
+}
+
+.btn {
+	font-family: var(--body-font-family);
+}
+
+.homeBody {
+	background-color: transparent;
+}
+
+@media (width <= 390px) {
+	.helpTextContainer {
+		font-size: 1.3rem;
+	}
+}
+
+@media (width <= 580px) {
+	.homeBody:not(:has(.captureBody)) {
+		background-color: #ffffff;
+	}
+}
+
+.helpTextContainer {
+	font-size: 1.3rem;
+}

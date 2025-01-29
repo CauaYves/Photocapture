@@ -1,0 +1,192 @@
+/* Estilos para largura (width) */
+@media (width <=480px) {
+	.linkToHome,
+	.homeTutorialButton {
+		transform: scale(0.9);
+	}
+
+	.linkToHome {
+		left: 8px;
+	}
+
+	.homeTutorialButton {
+		right: 14px;
+	}
+}
+@media (width <=430px) {
+	.outerContainer,
+	.helpTextContainer,
+	.buttonsContainer {
+		width: 360px;
+	}
+}
+
+@media (width <=390px) {
+	.outerContainer,
+	.helpTextContainer,
+	.buttonsContainer {
+		width: 330px;
+	}
+}
+
+@media (width <=360px) {
+	.outerContainer,
+	.helpTextContainer,
+	.buttonsContainer {
+		width: 300px;
+	}
+
+	.helpTextContainer {
+		font-size: 1rem;
+	}
+}
+
+@media (width <=330px) {
+	.outerContainer,
+	.helpTextContainer,
+	.buttonsContainer {
+		width: 270px;
+	}
+
+	.buttonsContainer button {
+		font-size: 1rem;
+	}
+}
+
+/* Estilos para altura (height) */
+@media (height <=790px) {
+	.outerContainer {
+		height: 460px;
+	}
+
+	.outerContainer.expanded {
+		height: 500px;
+	}
+
+	.captureBody {
+		justify-content: flex-start;
+		margin-top: 40px;
+		height: 100%;
+	}
+}
+
+@media (height <=760px) {
+	.outerContainer {
+		height: 430px;
+	}
+
+	.outerContainer.expanded {
+		height: 450px;
+	}
+}
+
+@media (height <=700px) {
+	.homeBody.NoAI {
+		.outerContainer {
+			height: 350px;
+		}
+	}
+
+	.outerContainer {
+		height: 410px;
+	}
+
+	.outerContainer.expanded {
+		height: 410px;
+	}
+}
+
+/* Estilos para largura e altura mobile */
+
+@media (width <=360px) and (height <=800px) {
+	.outerContainer {
+		height: 450px;
+	}
+
+	.outerContainer.expanded {
+		height: 490px;
+	}
+}
+
+@media (width <=360px) and (height <=750px) {
+	.outerContainer {
+		height: 430px;
+	}
+
+	.outerContainer.expanded {
+		height: 470px;
+	}
+}
+
+@media (width <=360px) and (height <=720px) {
+	.outerContainer {
+		height: 400px;
+	}
+
+	.outerContainer.expanded {
+		height: 440px;
+	}
+}
+
+@media (width <=430px) and (height <=680px) {
+	.outerContainer {
+		height: 400px;
+	}
+
+	.outerContainer.expanded {
+		height: 440px;
+	}
+
+	.captureBody {
+		margin-top: 20px;
+	}
+}
+
+@media (width <= 430px) and (height <= 660px) {
+	.outerContainer {
+		height: 380px;
+	}
+
+	.outerContainer.expanded {
+		height: 420px;
+	}
+}
+
+@media (width <=430px) and (height <=640px) {
+	.captureBody {
+		height: 420px;
+	}
+
+	.bound {
+		transform: scale(0.8);
+	}
+}
+
+@media (width <=430px) and (height <=600px) {
+	.captureBody {
+		height: 400px;
+		margin-top: 20px;
+	}
+
+	.bound {
+		transform: scale(0.7);
+	}
+}
+
+@media (width <=430px) and (height <=590px) {
+	.captureBody {
+		height: 400px;
+	}
+}
+
+@media (width <=430px) and (height <=550px) {
+	.captureBody {
+		height: 350px;
+	}
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+	.captureBody {
+		margin-bottom: 25vh;
+	}
+}

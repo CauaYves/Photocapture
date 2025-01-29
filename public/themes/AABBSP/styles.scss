@@ -1,0 +1,473 @@
+//  Font Import
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+//  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//  Core Variables
+//  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//  Colors
+
+    $blue: #010e2e;
+    $secondary-blue: #00268a;
+    $light-blue: #1d81f9;
+    $yellow: #ffdc00;
+    $contrast-yellow: #665800;
+
+    $default-primary-color: $blue;            // Cor principal do site, usado principalmente como fundo de botões e elementos chave.
+    $default-primary-contrast-color: #FFFFFF;   // Cores de contraste:
+    $default-secondary-contrast-color: $contrast-yellow; // São basicamente cores para destacar um elemento com alguma ação, um botão 
+    $default-tertiary-contrast-color: #FFFFFF;  // por exemplo, sendo ativado com :hover, focus, etc. 
+    $default-quaternary-contrast-color: #FFFFFF;
+
+//  Fonts
+    $default-primary-font: "Manrope"; // Fonte utilizada em todo o site.
+
+//  Text Colors
+    $default-primary-text-color: $secondary-blue;      // Cor principal, usada principalmente em títulos.
+    $default-secondary-text-color: #737276;    // Cor secundária, usada em textos e subtítulos.
+    $default-quaternary-text-color: #FFFFFF;   // Cor utilizada em elementos que possuem um fundo escuro ou colorido (como botões)
+
+//  Background Colors 
+    $default-primary-background-color: $blue;     // Cor de fundo principal, usada em todo o site.
+    $default-secondary-background-color: #FFFFFF;   // Cor de fundo utilizada principalmente nos Wrappers do site, como na home e login.
+    $default-tertiary-background-color: #FFFFFF;    // Cor de fundo utilizada no Header.
+    $default-body-background-color-mobile: #FFFFFF; // Cor de fundo utilizada na versão mobile.
+
+//  Box Shadows
+    $default-box-shadow-color: rgba(0, 0, 0, 0.15); // Cor da sombra dos elementos.
+
+//  Borders
+    $default-primary-border-color: #E0E0E0;     // Cor da borda principal, usada em quase todos os elementos (que possuem borda).
+    $default-secondary-border-color: #262626;   // Cor da borda secundária, usada em elementos que possuem um fundo escuro ou 
+                                                  // necessitam de um destaque maior.
+
+//  Border Radius
+    $default-full-border-radius: 50%;       // Para elementos que necessitam de um formato circular (como alguns botões).
+    $default-primary-border-radius: 16px;   // Borda para elementos maiores, com um grande espaço utilizado (como wrappers e pop-ups).
+    $default-secondary-border-radius: 10px; // Borda usada em elementos com grandes aparições (como cards, botões, inputs etc).
+
+//  Status Colors
+    $default-error-color: #D40606;     // Cor padrão utilizada em erros (usado nos tratamentos de erro [modal] e login).
+    $default-success-color: #00a64d;   // Cor padrão utilizada em sucessos (usado nos tratamentos de sucesso [modal]).
+
+//  Bound Colors (Capture) 
+    $default-bound-good-color: $light-blue;   // Cor utilizada para indicar que o rosto na captura com IA está na posição correta.
+    $default-bound-bad-color: #FF0800;    // Cor utilizada para indicar que o rosto na captura com IA está na posição incorreta.
+    $default-bound-no-ai-color: #FFFFFF;  // Cor utilizada para indicar um guia para o rosto na captura sem IA.
+
+//  Capture Button Colors 
+    $default-capture-button-ok-color: #1E9B61;      // Cor do botão de confirmação do envio da foto.
+    $default-capture-button-retake-color: #BF3A3A;  // Cor do botão para retirar outra foto.
+
+//  General (things that don't fit in the other categories)
+    $loader-primary-color: #262626;    // Cor de 3/4 do círculo de carregamento [border]
+    $loader-secondary-color: #DBDBDB;  // Cor de 1/4 do círculo de carregamento (destaque) [border-top]
+    $loader-border-radius: 50%;          // Formato do "círculo de carregamento" (50% = totalmente circular)
+
+    $default-user-background: #999999;              // Cor de fundo padrão para usuários sem foto (juntamente com a imagem padrão com o mesmo fundo).
+    $default-capture-has-photo-background: $yellow;     // Cor de fundo do "botão" no card indicando que o usuário possui uma foto (não clicável).
+
+    $default-shimmer-primary-color: #F0F0F0;    // Cor principal da animação de carregamento do card (shimmer)
+    $default-shimmer-secondary-color: #E0E0E0;  // Cor secundária da animação de carregamento do card (shimmer)
+
+    $default-face-icon-primary-color: $light-blue; // Cor do principal do ícone de uma pessoa usando uma biometria facial no tutorial (Digital).
+    $default-face-icon-secondary-color: #262626; // Cor secundária do  ícone -- (Pessoa).
+    $default-face-icon-accent-color: $default-secondary-background-color;  // Cor de destaque do ícone -- (boca).
+
+//  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//  Individual styles
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+//  These next styles are set to default values based on >CORE VARIABLES<.
+//  Their values can be customized individually for more specific adjustments if necessary.
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+//  The code is divided into sections, each section contains the variables for a specific "component". 
+//  The variables are divided into:
+//  Header, Body, Wrapper & Card, Footer Buttons, Tutorial, Form, Modal, Capture.
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+//  Each section contains the variables for the element itself and its buttons. 
+//  The hierarchy is as follows:
+//  Element > Button > Highlight.
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+//  "Element" refers to the element/component itself, such as the header, body, wrapper, card, etc.
+//  "Buttons" are used for buttons, inputs, and other elements that have a similar structure.
+//  "Highlight" means the colors that will be used when the element is hovered, focused or even pressed (used in buttons).
+//  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//  Header
+    $header-background-color: #00185a;
+    $header-box-shadow-color: $default-box-shadow-color;
+    $header-button-text-color: $yellow;
+    $header-button-icon-color: $header-button-text-color;
+
+//  Body
+    $body-primary-background-color: $default-primary-background-color;
+    $body-secondary-background-color: $default-secondary-background-color;
+    $body-primary-color: $default-primary-color;
+    $body-text-color: $default-primary-text-color;
+    $body-font-family: $default-primary-font;
+
+//  Wrapper & Card
+    $wrapper-primary-text-color: $secondary-blue;
+    $wrapper-icon-color: $wrapper-primary-text-color;
+    $wrapper-primary-font: $default-primary-font;
+    $wrapper-background-color: $default-secondary-background-color;
+    $wrapper-border-color: $default-primary-border-color;
+    $wrapper-border-radius: $default-secondary-border-radius;
+    $wrapper-member-title-text-color: $secondary-blue;
+    $wrapper-member-title-primary-font: $wrapper-primary-font;
+    $wrapper-member-title-border-color: $secondary-blue;
+    $wrapper-member-title-border-radius: $wrapper-border-radius;
+    $wrapper-member-title-background-color: none;
+
+    $card-primary-font: $default-primary-font;
+    $card-primary-text-color: $default-primary-text-color;
+    $card-secondary-text-color: #333333;
+    $card-tertiary-text-color: $secondary-blue;
+    $card-border-color: $default-primary-border-color;
+    $card-border-radius: $default-secondary-border-radius;
+    $card-background-color: none;
+
+    //  Card Buttons
+        $card-button-primary-font: $card-primary-font;
+        $card-button-background-color: #002ca6;
+        $card-button-border-color: #002ca6;
+        $card-button-text-color: $default-quaternary-text-color;
+        $card-button-icon-color: $card-button-text-color;
+        $card-button-border-radius: $card-border-radius;
+
+        $card-has-photo-font: $card-primary-font;
+        $card-has-photo-background-color: $default-success-color;
+        $card-has-photo-text-color: #FFFFFF;
+        $card-has-photo-icon-color: #FFFFFF;
+        $card-has-photo-outline-color: $card-has-photo-background-color;
+        
+        //  Card Buttons Highlight
+            $card-button-highlight-background-color: $yellow;
+            $card-button-highlight-text-color: #554900;
+            $card-button-highlight-icon-color: $card-button-highlight-text-color;
+            $card-button-highlight-border-color: $card-border-color;
+
+//  Tutorial
+    $tutorial-primary-font: $default-primary-font;
+    $tutorial-background-color: $default-secondary-background-color;
+    $tutorial-border-color: $default-primary-border-color;
+    $tutorial-border-radius: $default-primary-border-radius;
+    $tutorial-box-shadow-color: $default-box-shadow-color;
+    $tutorial-primary-text-color: $default-primary-text-color;
+    $tutorial-secondary-text-color: #515151;
+    $tutorial-bold-text-color: $tutorial-primary-text-color;
+
+    //  Tutorial Buttons
+        $tutorial-progress-bar-color: $light-blue;
+        $tutorial-progress-bar-border-radius: $default-secondary-border-radius;
+        $tutorial-button-icon-color: $light-blue;
+        $tutorial-button-background-color: $default-primary-contrast-color;
+        $tutorial-button-icon-border-color: $default-primary-color;
+        $tutorial-button-border-color:$light-blue;
+        $tutorial-button-border-radius: $default-full-border-radius;
+        $tutorial-slide-indicator-color: #a5a5a5;
+        $tutorial-slide-indicator-border-radius: $default-full-border-radius;
+        $tutorial-open-background-color: $yellow;
+        $tutorial-open-icon-color: $blue;
+        $tutorial-open-border-radius: $default-full-border-radius;
+        $tutorial-open-border-color: rgba(#000000, 0.1);
+
+        //  Tutorial Buttons Highlight
+            $tutorial-button-highlight-background-color: $light-blue;
+            $tutorial-button-highlight-icon-color: #FFFFFF;
+            $tutorial-button-highlight-indicator-color: $light-blue;
+            $tutorial-open-highlight-background-color: $default-primary-contrast-color;
+            $tutorial-open-highlight-icon-color: $blue;
+
+//  Form
+    $form-primary-font: $default-primary-font;
+    $form-primary-text-color: $default-primary-text-color;
+    $form-secondary-text-color: $default-secondary-text-color;
+    $form-icon-color: $form-primary-text-color;
+    $form-border-color: $default-primary-border-color;
+    $form-border-radius: $default-primary-border-radius;
+    $form-background-color: $default-secondary-background-color;
+
+    //  Form Inputs & Buttons
+        $form-label-text-color: $default-primary-text-color;
+        $form-placeholder-text-color: $default-secondary-text-color;
+        $form-input-text-color: $default-primary-text-color;
+        $form-input-border-radius: $default-secondary-border-radius;
+        $form-input-border-color: $form-border-color;
+        $form-input-background-color: $form-background-color;
+        $form-input-box-shadow-color: $default-box-shadow-color;
+        $form-button-background-color: $secondary-blue;
+        $form-button-text-color: $default-quaternary-text-color;
+        $form-button-icon-color: $form-button-text-color;
+        $form-button-border-radius: $default-secondary-border-radius;
+
+        //  Form Highlight
+            $form-input-highlight-border-color: $default-tertiary-contrast-color;
+            $form-input-highlight-error-color: $default-error-color;
+            $form-button-disabled-background-color: #d3dbe2;
+
+//  Modal
+    $modal-primary-font: $default-primary-font;
+    $modal-background-color: $default-secondary-background-color;
+    $modal-border-color: $default-primary-border-color;
+    $modal-border-radius: $default-primary-border-radius;
+    $modal-title-color-success: $default-success-color;
+    $modal-icon-color-success: $default-success-color;
+    $modal-title-color-error: $default-error-color;
+    $modal-icon-color-error: $default-error-color;
+    $modal-text-color: $default-secondary-text-color;
+    $modal-box-shadow: $default-box-shadow-color;
+
+    $modal-title-color-success: $default-success-color;
+    $modal-icon-color-success: $default-success-color;
+
+    //  Modal Buttons
+        $modal-button-background-color: $default-primary-contrast-color;
+        $modal-button-text-color: $default-error-color;
+        $modal-button-border-radius: $default-primary-border-radius;
+        $modal-button-border-color: $default-error-color;
+
+        $modal-button-text-color-success: $default-primary-contrast-color;
+        $modal-button-background-color-success: $default-success-color;
+        $modal-button-border-color-success: $default-success-color;
+
+        $modal-button-text-color-error: $default-primary-contrast-color;
+        $modal-button-background-color-error: $default-error-color;
+        $modal-button-border-color-error: $default-error-color;
+
+        //  Modal Buttons Highlight
+            $modal-button-highlight-background-color-success: $default-success-color;
+            $modal-button-highlight-text-color-success: $default-primary-contrast-color;
+            $modal-button-highlight-background-color-error: $default-error-color;
+            $modal-button-highlight-text-color-error: $default-primary-contrast-color;
+
+//  Capture
+    $capture-background-color: $blue;
+    $capture-border-radius: $default-primary-border-radius;
+    $capture-border-color: $default-primary-color;
+    $capture-box-shadow-color: $default-box-shadow-color;
+    $capture-guide-text-color: $default-quaternary-text-color;
+    $capture-guide-border-radius: $default-full-border-radius;
+    $capture-bound-color-bad: $default-bound-bad-color;
+    $capture-bound-color-good: $default-bound-good-color;
+    $capture-bound-color-no-ai: $default-bound-no-ai-color;
+
+    // Capture Buttons
+        $capture-button-take-photo-text-color: $capture-guide-text-color;
+        $capture-button-ok-background-color: $default-capture-button-ok-color;
+        $capture-button-ok-text-color: $default-quaternary-text-color;
+        $capture-button-ok-icon-color: $capture-button-ok-text-color;
+        $capture-button-retake-background-color: $default-capture-button-retake-color;
+        $capture-button-retake-text-color: $default-quaternary-text-color;
+        $capture-button-retake-icon-color: $capture-button-retake-text-color;
+        $capture-button-border-color: $default-primary-color;
+
+        $capture-button-linkToHome-background-color: $yellow;
+        $capture-button-linkToHome-text-color: $blue;
+        $capture-button-linkToHome-icon-color: $capture-button-linkToHome-text-color;
+        $capture-button-linkToHome-border-radius: $default-full-border-radius;
+        $capture-button-linkToHome-border-color: rgba(#000000, 0.3);
+
+    //  Capture Button Highlight
+        $capture-button-highlight-take-photo-text-color: #554900;
+        $capture-button-highlight-take-photo-background-color: $yellow;
+        $capture-button-highlight-linkToHome-background-color: #FFFFFF;
+        $capture-button-highlight-linkTohome-text-color: $blue;
+        $capture-button-highlight-linkToHome-border-radius: $default-secondary-border-radius;
+
+//  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//  Transcription of SCSS variables to CSS variables
+//  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+//  Do not change this part of the code. (Only if you know what you are doing :D)
+//  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//  Root Variables
+:root {
+    // Header
+    --header-background-color: #{$header-background-color};
+    --header-box-shadow-color: #{$header-box-shadow-color};
+    --header-button-text-color: #{$header-button-text-color};
+    --header-button-icon-color: #{$header-button-icon-color};
+
+    // Body
+    --body-primary-background-color: #{$body-primary-background-color};
+    --body-secondary-background-color: #{$body-secondary-background-color};
+    --body-primary-color: #{$body-primary-color};
+    --body-text-color: #{$body-text-color};
+    --body-font-family: #{$body-font-family};
+    --body-background-color-mobile: #{$default-body-background-color-mobile};
+
+    // Wrapper & Card
+    --wrapper-primary-text-color: #{$wrapper-primary-text-color};
+    --wrapper-icon-color: #{$wrapper-icon-color};
+    --wrapper-primary-font: #{$wrapper-primary-font};
+    --wrapper-background-color: #{$wrapper-background-color};
+    --wrapper-border-color: #{$wrapper-border-color};
+    --wrapper-border-radius: #{$wrapper-border-radius};
+    --wrapper-member-title-text-color: #{$wrapper-member-title-text-color};
+    --wrapper-member-title-primary-font: #{$wrapper-member-title-primary-font};
+    --wrapper-member-title-border-color: #{$wrapper-member-title-border-color};
+    --wrapper-member-title-border-radius: #{$wrapper-member-title-border-radius};
+    --wrapper-member-title-background-color: #{$wrapper-member-title-background-color};
+
+    --card-primary-font: #{$card-primary-font};
+    --card-primary-text-color: #{$card-primary-text-color};
+    --card-secondary-text-color: #{$card-secondary-text-color};
+    --card-tertiary-text-color: #{$card-tertiary-text-color};
+    --card-border-color: #{$card-border-color};
+    --card-border-radius: #{$card-border-radius};
+    --card-background-color: #{$card-background-color};
+
+    // Card Buttons
+    --card-button-primary-font: #{$card-button-primary-font};
+    --card-button-background-color: #{$card-button-background-color};
+    --card-button-border-color: #{$card-button-border-color};
+    --card-button-text-color: #{$card-button-text-color};
+    --card-button-icon-color: #{$card-button-icon-color};
+    --card-button-border-radius: #{$card-button-border-radius};
+
+    --card-has-photo-font: #{$card-has-photo-font};
+    --card-has-photo-background-color: #{$card-has-photo-background-color};
+    --card-has-photo-text-color: #{$card-has-photo-text-color};
+    --card-has-photo-icon-color: #{$card-has-photo-icon-color};
+    --card-has-photo-border-color: #{$card-has-photo-outline-color};
+
+
+    // Card Buttons Highlight
+    --card-button-highlight-background-color: #{$card-button-highlight-background-color};
+    --card-button-highlight-text-color: #{$card-button-highlight-text-color};
+    --card-button-highlight-icon-color: #{$card-button-highlight-icon-color};
+    --card-button-highlight-border-color: #{$card-button-highlight-border-color};
+
+    // Tutorial
+    --tutorial-background-color: #{$tutorial-background-color};
+    --tutorial-border-color: #{$tutorial-border-color};
+    --tutorial-border-radius: #{$tutorial-border-radius};
+    --tutorial-box-shadow-color: #{$tutorial-box-shadow-color};
+    --tutorial-primary-text-color: #{$tutorial-primary-text-color};
+    --tutorial-secondary-text-color: #{$tutorial-secondary-text-color};
+    --tutorial-bold-text-color: #{$tutorial-bold-text-color};
+    --tutorial-primary-font: #{$tutorial-primary-font};
+
+    // Tutorial Buttons
+    --tutorial-progress-bar-color: #{$tutorial-progress-bar-color};
+    --tutorial-progress-bar-border-radius: #{$tutorial-progress-bar-border-radius};
+    --tutorial-button-icon-color: #{$tutorial-button-icon-color};
+    --tutorial-button-background-color: #{$tutorial-button-background-color};
+    --tutorial-button-icon-border-color: #{$tutorial-button-icon-border-color};
+    --tutorial-button-border-color: #{$tutorial-button-border-color};
+    --tutorial-button-border-radius: #{$tutorial-button-border-radius};
+    --tutorial-slide-indicator-color: #{$tutorial-slide-indicator-color};
+    --tutorial-slide-indicator-border-radius: #{$tutorial-slide-indicator-border-radius};
+    --tutorial-open-background-color: #{$tutorial-open-background-color};
+    --tutorial-open-icon-color: #{$tutorial-open-icon-color};
+    --tutorial-open-border-radius: #{$tutorial-open-border-radius};
+    --tutorial-open-border-color: #{$tutorial-open-border-color};
+
+    // Tutorial Buttons Highlight
+    --tutorial-button-highlight-background-color: #{$tutorial-button-highlight-background-color};
+    --tutorial-button-highlight-icon-color: #{$tutorial-button-highlight-icon-color};
+    --tutorial-button-highlight-indicator-color: #{$tutorial-button-highlight-indicator-color};
+    --tutorial-open-highlight-background-color: #{$tutorial-open-highlight-background-color};
+    --tutorial-open-highlight-icon-color: #{$tutorial-open-highlight-icon-color};
+
+    // Form
+    --form-primary-font: #{$form-primary-font};
+    --form-primary-text-color: #{$form-primary-text-color};
+    --form-secondary-text-color: #{$form-secondary-text-color};
+    --form-icon-color: #{$form-icon-color};
+    --form-border-color: #{$form-border-color};
+    --form-border-radius: #{$form-border-radius};
+    --form-background-color: #{$form-background-color};
+
+    // Form Inputs & Buttons
+    --form-label-text-color: #{$form-label-text-color};
+    --form-placeholder-text-color: #{$form-placeholder-text-color};
+    --form-input-text-color: #{$form-input-text-color};
+    --form-input-border-radius: #{$form-input-border-radius};
+    --form-input-border-color: #{$form-input-border-color};
+    --form-input-background-color: #{$form-input-background-color};
+    --form-input-box-shadow-color: #{$form-input-box-shadow-color};
+    --form-button-background-color: #{$form-button-background-color};
+    --form-button-text-color: #{$form-button-text-color};
+    --form-button-icon-color: #{$form-button-icon-color};
+    --form-button-border-radius: #{$form-button-border-radius};
+
+    // Form Highlight
+    --form-input-highlight-border-color: #{$form-input-highlight-border-color};
+    --form-input-highlight-error-color: #{$form-input-highlight-error-color};
+    --form-button-disabled-background-color: #{$form-button-disabled-background-color};
+
+    // Modal
+    --modal-primary-font: #{$modal-primary-font};
+    --modal-background-color: #{$modal-background-color};
+    --modal-border-color: #{$modal-border-color};
+    --modal-border-radius: #{$modal-border-radius};
+    --modal-title-color-success: #{$modal-title-color-success};
+    --modal-title-color-error: #{$modal-title-color-error};
+    --modal-icon-color-success: #{$modal-icon-color-success};
+    --modal-icon-color-error: #{$modal-icon-color-error};
+    --modal-text-color: #{$modal-text-color};
+    --modal-box-shadow: #{$modal-box-shadow};
+
+    // Modal Buttons
+    --modal-button-text-color: #{$modal-button-text-color};
+    --modal-button-border-radius: #{$modal-button-border-radius};
+    --modal-button-border-color: #{$modal-button-border-color};
+    --modal-button-color-success: #{$modal-button-text-color-success};
+    --modal-button-background-color-success: #{$modal-button-background-color-success};
+    --modal-button-border-color-success: #{$modal-button-border-color-success};
+    --modal-button-text-color-success: #{$modal-button-text-color-success};
+    --modal-button-text-color-error: #{$modal-button-text-color-error};
+    --modal-button-background-color-error: #{$modal-button-background-color-error};
+    --modal-button-border-color-error: #{$modal-button-border-color-error};
+
+    // Modal Buttons Highlight
+    --modal-button-highlight-background-color-success: #{$modal-button-highlight-background-color-success};
+    --modal-button-highlight-text-color-success: #{$modal-button-highlight-text-color-success};
+    --modal-button-highlight-background-color-error: #{$modal-button-highlight-background-color-error};
+    --modal-button-highlight-text-color-error: #{$modal-button-highlight-text-color-error};
+
+    // Capture
+    --capture-background-color: #{$capture-background-color};
+    --capture-border-radius: #{$capture-border-radius};
+    --capture-border-color: #{$capture-border-color};
+    --capture-box-shadow-color: #{$capture-box-shadow-color};
+    --capture-guide-text-color: #{$capture-guide-text-color};
+    --capture-guide-border-radius: #{$capture-guide-border-radius};
+    --capture-bound-color-bad: #{$capture-bound-color-bad};
+    --capture-bound-color-good: #{$capture-bound-color-good};
+    --capture-bound-color-no-ai: #{$capture-bound-color-no-ai};
+    --capture-button-take-photo-text-color: #{$capture-button-take-photo-text-color};
+    --capture-button-ok-background-color: #{$capture-button-ok-background-color};
+    --capture-button-ok-text-color: #{$capture-button-ok-text-color};
+    --capture-button-ok-icon-color: #{$capture-button-ok-icon-color};
+    --capture-button-retake-background-color: #{$capture-button-retake-background-color};
+    --capture-button-retake-text-color: #{$capture-button-retake-text-color};
+    --capture-button-retake-icon-color: #{$capture-button-retake-icon-color};
+    --capture-button-border-color: #{$capture-button-border-color};
+    --capture-button-linkToHome-background-color: #{$capture-button-linkToHome-background-color};
+    --capture-button-linkToHome-text-color: #{$capture-button-linkToHome-text-color};
+    --capture-button-linkToHome-icon-color: #{$capture-button-linkToHome-icon-color};
+    --capture-button-linkToHome-border-radius: #{$capture-button-linkToHome-border-radius};
+    --capture-button-linkToHome-border-color: #{$capture-button-linkToHome-border-color};
+
+    // Capture Button Highlight
+    --capture-button-highlight-take-photo-text-color: #{$capture-button-highlight-take-photo-text-color};
+    --capture-button-highlight-take-photo-background-color: #{$capture-button-highlight-take-photo-background-color};
+    --capture-button-highlight-linkToHome-background-color: #{$capture-button-highlight-linkToHome-background-color};
+    --capture-button-highlight-linkTohome-text-color: #{$capture-button-highlight-linkTohome-text-color};
+    --capture-button-highlight-linkToHome-border-radius: #{$capture-button-highlight-linkToHome-border-radius};
+
+    // General
+    --loader-primary-color: #{$loader-primary-color};
+    --loader-secondary-color: #{$loader-secondary-color};
+    --loader-border-radius: #{$loader-border-radius};
+    --default-user-background: #{$default-user-background};
+    --default-capture-has-photo-background: #{$default-capture-has-photo-background};
+    --default-shimmer-primary-color: #{$default-shimmer-primary-color};
+    --default-shimmer-secondary-color: #{$default-shimmer-secondary-color};
+    --default-face-icon-primary-color: #{$default-face-icon-primary-color};
+    --default-face-icon-secondary-color: #{$default-face-icon-secondary-color};
+    --default-face-icon-accent-color: #{$default-face-icon-accent-color};
+}
+
+@import url('../../../src/styles/globals.scss');
+@import url('custom.scss');

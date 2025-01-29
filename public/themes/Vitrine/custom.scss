@@ -1,0 +1,22 @@
+body {
+    background-color: var(--body-primary-background-color);
+    background-image: url("./background.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body{
+    @media (max-width: 576px) {
+        background-position: left !important;
+        background-repeat: no-repeat !important;
+        width: 100vw;
+        height: 100vh;
+        justify-content: inherit;
+    }
+}
+
+.homeBody
+{
+    background-color: transparent;
+}

@@ -1,0 +1,51 @@
+body {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: var(--body-primary-color);
+	font-family: var(--body-font-family);
+}
+
+@media (width <= 580px) {
+	body:not(:has(.captureBody)) {
+		background-image: none !important;
+		background-color: var(--body-background-color-mobile) !important;
+	}
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+	body {
+		background-size: cover !important;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--wrapper-primary-text-color);
+}
+
+video {
+	object-fit: cover;
+}
+
+a {
+	appearance: none;
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	justify-content: center;
+}
+
+button {
+	appearance: none;
+	border: none;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}

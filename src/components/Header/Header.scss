@@ -1,0 +1,82 @@
+
+.header {
+    background-color: var(--header-background-color);
+    box-shadow: 0 8px 16px var(--header-box-shadow-color);
+    padding: 1rem 0;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.loggedIn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1020px;
+
+    @media (width <=1070px){
+        width: 95%;
+    }
+}
+
+.loggedOut {
+    text-align: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoImage {
+    max-width: 135px;
+
+    @media (width <=430px) {
+        width: calc(100% - 30px);
+    }
+}
+
+.signOutLink {
+    color: var(--header-button-text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+
+    svg {
+        transition: transform 0.2s ease;
+    }
+
+    .exit {
+        transition: transform 0.2s ease 0.1s;
+    }
+
+    &:hover {
+        svg, .exit {
+            transform: translateX(5px);
+        }
+    }
+}
+
+.iconLogout {
+    margin-right: 5px;
+    width: auto;
+    height: 1.5rem;
+    color: var(--header-button-icon-color);
+}
+
+@media (prefers-reduced-motion) {
+    .signOutLink:hover .iconLogout {
+        transform: none;
+    }
+}

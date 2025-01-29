@@ -1,0 +1,325 @@
+.opacityControl {
+	opacity: 1 !important;
+	pointer-events: all !important;
+	backdrop-filter: blur(5px);
+}
+
+.homeTutorial {
+	pointer-events: none;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+	backdrop-filter: blur(5px);
+	transition: all 0.4s 0.2s;
+	background-color: rgba(0, 0, 0, 0.7);
+	overflow-y: auto;
+	left: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.homeTutorialWrapper {
+	display: flex;
+	width: 700px;
+	height: fit-content;
+	background-color: var(--tutorial-background-color);
+	outline: 1px solid var(--tutorial-border-color);
+	border-radius: var(--tutorial-border-radius);
+	box-shadow: var(--tutorial-box-shadow-color);
+	margin: 3vh;
+}
+
+.homeTutorialFace {
+	align-self: center;
+	display: flex;
+	width: 250px;
+	position: relative;
+	transform: translateX(-60px);
+	align-items: center;
+	scale: 0.6;
+
+	span {
+		position: absolute;
+	}
+}
+
+.homeTutorialContent {
+	display: flex;
+	width: 385px;
+	height: 100%;
+	flex-direction: column;
+}
+
+.homeTutorialTitle {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.homeTutorialTitle h2 {
+	font-size: 2rem;
+	font-weight: 600;
+	margin: 0;
+	color: var(--tutorial-primary-text-color);
+}
+
+.homeTutorialTitle button {
+	cursor: pointer;
+	width: 26px;
+	aspect-ratio: 1/1;
+	background-color: var(--tutorial-button-background-color);
+	border-radius: var(--tutorial-button-border-radius);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	box-sizing: content-box;
+	transition: transform 0.2s, background 0.2s;
+}
+
+.homeTutorialTitle button .closeTutorialButton {
+	height: 20px;
+	rotate: 45deg;
+
+	path {
+		fill: var(--tutorial-button-icon-color);
+		transition: fill 0.2s;
+	}
+}
+
+@media (pointer: fine) {
+	.homeTutorialTitle button:hover {
+		transform: scale(1.1);
+		background-color: var(--tutorial-button-highlight-background-color);
+
+		path {
+			fill: var(--tutorial-button-highlight-icon-color);
+		}
+	}
+}
+
+.homeTutorialText p {
+	text-align: justify;
+	font-size: 1rem;
+	color: var(--tutorial-secondary-text-color);
+}
+
+.homeTutorialText ul {
+	padding-left: 25px;
+	font-size: 0.9rem;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	li {
+		color: var(--tutorial-secondary-text-color);
+	}
+
+	b {
+		color: var(--tutorial-bold-text-color);
+	}
+}
+
+.textCarousel {
+	padding: 30px;
+	border-left: 1px solid var(--tutorial-border-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.carouselProps {
+	margin-top: 16px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.carouselControl {
+	user-select: none;
+	cursor: pointer;
+	display: flex;
+	width: 30px;
+	height: 30px;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	outline: 1px solid var(--tutorial-button-border-color);
+	background-color: var(--tutorial-button-background-color);
+	border-radius: 50%;
+	margin: 0 20px;
+	padding: 0;
+	box-sizing: content-box;
+	transition: all 0.3s cubic-bezier(0.5, -1.5, 0.5, 1.5), outline 0.2s,
+		background-color 0.3s, rotate 0.5s;
+
+	svg {
+		height: 20px;
+	}
+
+	path {
+		transition: fill 0.3s;
+		fill: var(--tutorial-button-icon-color);
+	}
+}
+
+.disabled {
+	position: relative;
+	pointer-events: none;
+	opacity: 0;
+	scale: 0;
+}
+
+.last {
+	rotate: 405deg;
+}
+
+@media (pointer: fine) {
+	.carouselControl:hover {
+		background-color: var(--tutorial-button-highlight-background-color);
+
+		path {
+			fill: var(--tutorial-button-highlight-icon-color);
+		}
+	}
+}
+
+.carouselIndicators {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 7px;
+
+	> div {
+		display: flex;
+	}
+}
+
+.progressDiv {
+	position: relative;
+	overflow: hidden;
+	width: 90px;
+	height: 5px;
+	background-color: var(--tutorial-border-color);
+	border-radius: var(--tutorial-progress-bar-border-radius);
+}
+
+.progressBar {
+	pointer-events: none;
+	position: absolute;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background-color: var(--tutorial-progress-bar-color);
+	transition: all linear 0.4s;
+}
+
+.indicator {
+	cursor: pointer;
+	width: 12px;
+	aspect-ratio: 1/1;
+	background-color: var(--tutorial-slide-indicator-color);
+	border-radius: var(--tutorial-slide-indicator-border-radius);
+	margin: 0 6px;
+	transition: background-color 0.5s, scale 0.2s, opacity 0.2s;
+}
+.indicator:not(.active) {
+	opacity: 0.5;
+}
+.indicator:hover {
+	scale: 1.2;
+	opacity: 1;
+}
+
+.indicator.active {
+	background-color: var(--tutorial-button-highlight-indicator-color);
+}
+
+.homeTutorialButton {
+	user-select: none;
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	bottom: 20px;
+	right: 20px;
+	border-radius: 50%;
+	background-color: var(--tutorial-open-background-color);
+	transition: transform 0.4s cubic-bezier(0.5, -1.5, 0.5, 1.5);
+	z-index: 3;
+
+	> button {
+		position: relative;
+		left: 50%;
+		bottom: 50%;
+		transform: translate(-50%, 40%);
+		cursor: pointer;
+		border-radius: 50%;
+		background-color: var(--tutorial-open-background-color);
+		width: 110%;
+		aspect-ratio: 1/1;
+		outline: 1px solid var(--tutorial-open-border-color);
+		transition: background-color 0.4s;
+	}
+
+	path {
+		fill: var(--tutorial-open-icon-color);
+		transition: fill 0.4s;
+	}
+}
+
+@media (pointer: fine) {
+	.homeTutorialButton:hover {
+		transform: translateY(-4px);
+
+		> button {
+			background-color: var(--tutorial-open-highlight-background-color);
+		}
+
+		path {
+			fill: var(--tutorial-open-highlight-icon-color);
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.homeTutorial {
+		transition: none;
+	}
+
+	.homeTutorialWrapper {
+		transition: none;
+	}
+
+	.homeTutorialTitle button {
+		transition: none;
+	}
+
+	.indicator {
+		transition: none;
+	}
+
+	.carouselControl {
+		transition: none !important;
+	}
+
+	.carouselControl span {
+		transition: none;
+	}
+
+	.progressBar {
+		transition: transform steps(10) 0s;
+	}
+
+	.disabled {
+		transition: none;
+	}
+
+	.homeTutorialButton {
+		transition: none !important;
+	}
+}

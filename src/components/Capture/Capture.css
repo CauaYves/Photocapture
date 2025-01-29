@@ -1,0 +1,457 @@
+.opacityControl {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    backdrop-filter: blur(5px);
+}
+
+.instructionText {
+    width: 500px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.faceContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.captureBody {
+    display: flex;
+    flex-direction: column;
+    width: 100dvw;
+    height: 85dvh;
+    align-items: center;
+    justify-content: center;
+}
+
+.outerContainer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 370px;
+    height: 500px;
+    outline: 1px solid var(--capture-border-color);
+    border-radius: var(--capture-border-radius);
+    overflow: hidden;
+    box-shadow: var(--capture-box-shadow-color);
+}
+
+.innerContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.webcamContainer {
+    display: flex;
+    height: 500px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.errorText {
+    position: absolute;
+    text-align: center;
+    color: var(--capture-bound-color-bad);
+    z-index: 12;
+}
+
+.faceLandmarksContainer {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.bound {
+    width: 209px;
+    height: 337px;
+    border-radius: var(--capture-guide-border-radius);
+    border: 4px solid transparent;
+    z-index: 5;
+}
+
+.faceSvg {
+    width: 70%;
+    height: 70%;
+    z-index: 11;
+    opacity: 0.2;
+}
+
+.helpTextContainer {
+    font-size: 1.2rem;
+    color: var(--capture-guide-text-color);
+    background: var(--capture-background-color);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    z-index: 5;
+    outline: 1px solid var(--capture-border-color);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-weight: 600;
+    width: 370px;
+    text-align: center;
+
+    p {
+        margin: 0;
+    }
+}
+
+.buttonsContainer {
+    display: flex;
+    width: 370px;
+    z-index: 5;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid color-mix(in srgb, var(--capture-button-border-color) 40%, transparent 60%) ;
+    border-top: none;
+    width: 100%;
+    flex-grow: 1;
+    gap: 10px;
+    font-family: var(--body-font-family);
+    font-size: 1.2rem;
+    appearance: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s cubic-bezier(0.5, -1.5, 0.5, 1.5), filter 0.3s, font-size 0s, flex-shrink 0.2s 0.1s;
+
+    span {
+        width: 20px;
+        background-size: contain;
+        aspect-ratio: 1/1;
+    }
+}
+
+.buttonOk {
+    background-color: var(--capture-button-ok-background-color);
+    color: var(--capture-button-ok-text-color);
+    border-bottom-left-radius: var(--capture-border-radius);
+}
+
+.buttonRetake {
+    background-color: var(--capture-button-retake-background-color);
+    color: var(--capture-button-retake-text-color);
+    border-bottom-right-radius: var(--capture-border-radius);
+    border-left: none;
+}
+
+.imageSrcContainer {
+    position: absolute;
+    width: 500;
+    height: 500;
+}
+
+.imageSrc {
+    z-index: 15;
+    object-fit: cover;
+}
+
+.linkToHome {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 50px;
+    border-radius: var(--capture-button-highlight-linkToHome-border-radius);
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--capture-button-linkToHome-background-color);
+    outline: 1px solid var(--capture-button-linkToHome-border-color);
+    overflow: hidden;
+
+    .arrowIcon {
+        position: absolute;
+        opacity: 0;
+        width: 30px;
+        aspect-ratio: 1/1;
+        pointer-events: none;
+        transition: opacity 0.2s;
+
+        path {
+            fill: var(--capture-button-linkToHome-icon-color);
+        }
+    }
+
+    div {
+        color: var(--capture-button-linkToHome-text-color);
+        text-wrap: nowrap;
+        font-weight: 700;
+    }
+}
+
+.popupBackgroundBlur {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    top: 0;
+    backdrop-filter: blur(5px);
+    z-index: 15;
+    transition: opacity 0.3s;
+}
+
+.popupWrapper {
+    background-color: var(--modal-background-color);
+    border: 1px solid var(--modal-border-color);
+    border-radius: var(--modal-border-radius);
+    text-align: center;
+    box-shadow: 0 4px 8px var(--modal-box-shadow-color);
+    margin: 3vh;
+    padding: 4vh 3vw;
+    white-space: pre-line;
+    text-wrap: pretty;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 576px) {
+        width: 70vw;
+        font-size: 0.7rem;
+    }
+
+    @media (min-width: 768px) {
+        width: 40vw;
+    }
+
+    @media (min-width: 992px) {
+        width: 25vw;
+    }
+}
+
+.recoginitionPopup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.errorMessage>button {
+    background-color: var(--error-color);
+    outline: 1px solid var(--error-color);
+}
+
+.successMessage>button {
+    background-color: var(--capture-button-ok);
+    outline: 1px solid var(--capture-button-ok);
+}
+
+.successMessage,
+.errorMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popupBackgroundBlur h5 {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.sendingMessage h5,
+.successMessage h5 {
+    color: var(--modal-title-color-success);
+}
+
+.errorMessage h5 {
+    color: var(--modal-title-color);
+}
+
+.successMessage p,
+.errorMessage p,
+.sendingMessage p {
+    margin: 5px;
+    font-size: 0.9rem;
+    color: var(--modal-text-color);
+}
+
+.successMessage span {
+    width: 70px;
+    aspect-ratio: 1/1;
+    background-size: contain;
+    margin-bottom: 20px;
+}
+
+.errorMessage span {
+    width: 80px;
+    aspect-ratio: 1/1;
+    background-size: contain;
+}
+
+.loaderIcon,
+.spinnerContainer {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--loader-border-radius);
+    display: inline-block;
+    border: 3px solid var(--loader-primary-color); 
+    border-top: 3px solid var(--modal-title-color-success); 
+    box-sizing: border-box;
+    animation: rotation 1.5s linear infinite;
+    margin-bottom: 15px;
+}
+
+.spinnerContainer {
+    border: 3px solid var(--loader-primary-color);
+    border-top: 3px solid var(--loader-secondary-color); 
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (pointer: fine) {
+    .closePopup:hover {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .buttonOk:hover {
+        filter: contrast(1.2);
+    }
+
+    .buttonRetake:hover {
+        filter: contrast(1.2);
+    }
+
+    .buttonsContainer:has(.btn:hover) .btn:not(:hover) {
+        flex-shrink: 1.2;
+        filter: brightness(0.5) grayscale(0.5);
+    }
+
+    .linkToHome {
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        display: flex;
+        width: 50px;
+        border-radius: var(--capture-button-linkToHome-border-radius);
+        transition: all 0.2s, border-radius 0.3s 0.05s;
+    }
+    
+    .linkToHome .arrowIcon {
+        opacity: 1;
+    }
+
+    .linkToHome div {
+        opacity: 0;
+        font-size: 1.1rem;
+        transition: opacity 0.2s;
+    }
+
+    .linkToHome:hover {
+        width: 160px;
+        background-color: var(--capture-button-highlight-linkToHome-background-color);
+        outline: 1px solid var(--capture-button-linkToHome-border-color);
+        border-radius: var(--capture-button-highlight-linkToHome-border-radius);
+        transition: all 0.2s, opacity 0.1s;
+
+        .arrowIcon {
+            opacity: 0;
+        }
+
+        div {
+            color: var(--capture-button-highlight-linkTohome-text-color);
+            opacity: 1;
+            left: 0;
+            padding: 0;
+        }
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loaderIcon {
+        animation: rotation steps(4) infinite 1.5s;
+    }
+
+    .closePopup {
+        transition: none;
+    }
+
+    .buttonOk {
+        transition: none;
+    }
+
+    .buttonRetake {
+        transition: none;
+    }
+
+    .linkToHome {
+        transition: none;
+    }
+
+    .linkToHome div {
+        transition: none;
+    }
+
+    .linkToHome div::after {
+        transition: none;
+    }
+
+    .homeTutorialButton {
+        transition: none;
+    }
+}
+
+/* Estilos específicos para a página de captura sem IA */
+
+.homeBody.NoAI {
+    .outerContainer {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .helpTextContainer {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        outline: 1px solid var(--capture-border-color);
+    }
+
+    .buttonTakePhoto {
+        border: 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: var(--capture-background-color);
+        color: var(--capture-button-take-photo-text-color); 
+        transition: 0.3s 0.1s cubic-bezier(0.5, -1.5, 0.5, 1.5), background-color 0.3s, color 0.3s, font-size 0s, outline 0.3s, opacity 0.3s;
+    }
+
+    .buttonTakePhoto:hover, .buttonTakePhoto:active {
+        background-color: var(--capture-button-highlight-take-photo-background-color);
+        outline: 1px solid var(--capture-border-color);
+        color: var(--capture-button-highlight-take-photo-text-color);
+    }
+
+    .buttonTakePhoto:active {
+        outline-offset: 3px;
+    }
+}

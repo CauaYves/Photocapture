@@ -1,0 +1,31 @@
+.wrapperLoading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.loading {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--loader-primary-color); 
+    border-top: 2px solid var(--loader-secondary-color); 
+    border-radius: var(--loader-border-radius);
+
+    animation: spin 1s ease-in-out infinite;
+    opacity: 0.8; 
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
