@@ -96,11 +96,6 @@ function SignInPage() {
 						</svg>
 						<h1 className="title">Biometria facial</h1>
 						<p className="description">Para entrar, confirme seus dados</p>
-						<button style={{height: 100, padding: 30}} onClick={() => {
-							navigate("/teste")
-						}}>
-							COMEÇAR TESTES
-						</button>
 					</div>
 					<form className="form" onSubmit={handleSubmit}>
 						<div className="formGroup">
@@ -177,7 +172,7 @@ function SignInPage() {
 									</span>
 									<span>
 										Li e aceito a 
-										<a href={terms} target="_blank" rel="noreferrer">
+										<a href={terms} target="_blank">
 											política de privacidade
 										</a>
 									</span>

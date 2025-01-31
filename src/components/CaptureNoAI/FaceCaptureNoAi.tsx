@@ -2,17 +2,17 @@ import { Camera, ThumbsUp } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
+import { TutorialBorderIcon } from "../../assets/icons/tutorial-box-icon";
+import { TutorialFaceIcon } from "../../assets/icons/tutorial-face-icon";
+import { TutorialHairIcon } from "../../assets/icons/tutorial-hair-icon";
+import { TutorialUserIcon } from "../../assets/icons/tutorial-user-icon";
+import { isSignedIn } from '../../services/api';
 import "../Capture/Capture.css";
 import "../Capture/Capture.Responsive.css";
 import Header from "../Header/Header";
-import { isSignedIn } from '../../services/api';
 import { faultMessages } from "../Modal/FaultMessagesModal";
 import TextCarousel from "../Tutorial/HomeTutorialCarousel";
 import { TutorialSlides } from "../Tutorial/TutorialSlides";
-import { TutorialFaceIcon } from "../../assets/icons/tutorial-face-icon";
-import { TutorialUserIcon } from "../../assets/icons/tutorial-user-icon";
-import { TutorialHairIcon } from "../../assets/icons/tutorial-hair-icon";
-import { TutorialBorderIcon } from "../../assets/icons/tutorial-box-icon";
 
 export const resetTutorial = () => {
 	localStorage.setItem("hasSeenTutorial", "false");
@@ -192,7 +192,6 @@ export default function FaceCaptureNoAi() {
 											}}
 											width={500}
 											height={500}
-											mirrored
 											onUserMediaError={onMediaError}
 										/>
 									)
