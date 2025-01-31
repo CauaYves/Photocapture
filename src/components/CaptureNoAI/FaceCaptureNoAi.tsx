@@ -187,11 +187,9 @@ export default function FaceCaptureNoAi() {
 											ref={WebCamRef}
 											videoConstraints={{
 												facingMode: "user",
-												width: 500,
-												height: 500,
+												
 											}}
-											width={500}
-											height={500}
+											mirrored
 											onUserMediaError={onMediaError}
 										/>
 									)
